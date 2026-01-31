@@ -1,0 +1,526 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lead Generation Form</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f7f7f7;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        h1 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .section {
+            margin-bottom: 25px;
+        }
+        .section h2 {
+            margin-top: 0;
+            font-size: 1.2em;
+            border-bottom: 1px solid #ccc;
+            padding-bottom: 5px;
+        }
+        label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+        input[type="text"],
+        input[type="number"],
+        input[type="email"],
+        input[type="tel"],
+        input[type="date"],
+        textarea,
+        select {
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+        select[multiple] {
+            height: 120px;
+        }
+        button {
+            background-color: #007bff;
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 1em;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+        small {
+            color: #666;
+            font-size: 0.85em;
+        }
+        span.required {
+            color: red;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Lead Generation Form</h1>
+        <p style="text-align:center; font-style: italic; color:#555;">Provide details about your desired audience and lead filters below, including search terms your prospects might use&nbsp;— such as supplements, roofing, insurance, lawyer, and more.</p>
+<form id="leadForm" action="https://formsubmit.co/ashersallen@gmail.com" method="POST">
+            <!-- Hidden formsubmit subject -->
+            <input type="hidden" name="_subject" value="New Lead Filter Request">
+
+            <!-- Contact Information -->
+            <div class="section">
+                <h2>Contact Information</h2>
+                <label for="first_name">First Name <span class="required">*</span></label>
+                <input type="text" id="first_name" name="first_name" required placeholder="Enter your first name">
+
+                <label for="last_name">Last Name <span class="required">*</span></label>
+                <input type="text" id="last_name" name="last_name" required placeholder="Enter your last name">
+
+                <label for="email">Email Address <span class="required">*</span></label>
+                <input type="email" id="email" name="email" required placeholder="Enter your email address">
+
+                <label for="phone">Phone Number <span class="required">*</span></label>
+                <input type="tel" id="phone" name="phone" required placeholder="Enter your phone number">
+
+                <label for="user_industry">Your Industry <span class="required">*</span></label>
+                <input type="text" id="user_industry" name="user_industry" required placeholder="e.g. Healthcare, Roofing, Finance">
+
+                <label for="request_date">Date of Request <span class="required">*</span></label>
+                <input type="date" id="request_date" name="request_date" required>
+            
+                <label for="referral_source">How did you hear about us? <span class="required">*</span></label>
+                <input type="text" id="referral_source" name="referral_source" required placeholder="Name, company, or referral source">
+
+                <label for="lead_estimate">Estimated number of leads you're interested in <span class="required">*</span></label>
+                <input type="number" id="lead_estimate" name="lead_estimate" min="100" required placeholder="e.g. 100+ (for pricing purposes only)">
+                <small>Minimum recommended: 100 leads</small>
+</div>
+
+            <!-- Interest & Keyword Filters -->
+            <div class="section">
+                <h2>Interest & Keyword Filters</h2>
+                <label for="search_terms">Search Terms / Interests <span class="required">*</span></label>
+                <textarea name="search_terms" id="search_terms" rows="3" required placeholder="e.g. supplements, vitamins, healthy living, roofing, insurance"></textarea>
+                <small>List keywords or phrases separated by commas.</small>
+            </div>
+
+            <!-- Business (B2B) Filters -->
+            <div class="section">
+                <h2>Business (B2B) Filters</h2>
+                <label for="business_keywords">B2B Business Keywords</label>
+                <textarea name="business_keywords" id="business_keywords" rows="2" placeholder="e.g. SaaS, cloud services, fintech"></textarea>
+
+                <label for="job_titles">Job Titles</label>
+                <textarea name="job_titles" id="job_titles" rows="2" placeholder="e.g. CEO, Marketing Director, IT Manager"></textarea>
+
+                <label for="seniority">Seniority</label>
+                <select name="seniority" id="seniority">
+                    <option value="">Select...</option>
+                    <option value="Owner/Partner">Owner/Partner</option>
+                    <option value="C-Level">C-Level</option>
+                    <option value="Vice President">Vice President</option>
+                    <option value="Director">Director</option>
+                    <option value="Manager">Manager</option>
+                    <option value="Senior">Senior</option>
+                    <option value="Associate">Associate</option>
+                    <option value="Entry Level">Entry Level</option>
+                </select>
+
+                <label for="department">Department</label>
+                <select name="department" id="department">
+                    <option value="">Select...</option>
+                    <option value="Marketing">Marketing</option>
+                    <option value="Sales">Sales</option>
+                    <option value="Operations">Operations</option>
+                    <option value="Finance">Finance</option>
+                    <option value="Human Resources">Human Resources</option>
+                    <option value="Information Technology">Information Technology</option>
+                    <option value="Customer Service">Customer Service</option>
+                    <option value="Product Management">Product Management</option>
+                    <option value="Engineering">Engineering</option>
+                    <option value="Other">Other</option>
+                </select>
+
+                <label for="company_names">Company Names</label>
+                <textarea name="company_names" id="company_names" rows="2" placeholder="Enter company names separated by commas"></textarea>
+
+                <label for="company_domains">Company Domains</label>
+                <textarea name="company_domains" id="company_domains" rows="2" placeholder="Enter domains separated by commas (e.g. example.com)"></textarea>
+            </div>
+
+            <!-- Industry & Company Details -->
+            <div class="section">
+                <h2>Industry & Company Details</h2>
+                <label for="industries">Industry</label>
+                <select name="industries" id="industries">
+                    <option value="">Select...</option>
+                    <option value="Healthcare">Healthcare</option>
+                    <option value="Technology">Technology</option>
+                    <option value="Finance">Finance</option>
+                    <option value="Retail">Retail</option>
+                    <option value="Manufacturing">Manufacturing</option>
+                    <option value="Education">Education</option>
+                    <option value="Real Estate">Real Estate</option>
+                    <option value="Hospitality">Hospitality</option>
+                    <option value="Transportation">Transportation</option>
+                    <option value="Insurance">Insurance</option>
+                    <option value="Supplements &amp; Vitamins">Supplements &amp; Vitamins</option>
+                    <option value="Home Services (Roofing, etc.)">Home Services (Roofing, etc.)</option>
+                    <option value="Non-Profit">Non-Profit</option>
+                    <option value="Other">Other</option>
+                </select>
+
+                <label for="sic_codes">SIC Codes</label>
+                <textarea name="sic_codes" id="sic_codes" rows="2" placeholder="Enter SIC codes separated by commas"></textarea>
+
+                <label for="naics_codes">NAICS Codes</label>
+                <textarea name="naics_codes" id="naics_codes" rows="2" placeholder="Enter NAICS codes separated by commas"></textarea>
+
+                <label for="employee_count">Employee Count Range</label>
+                <select name="employee_count" id="employee_count">
+                    <option value="">Select...</option>
+                    <option value="1-10">1-10</option>
+                    <option value="11-50">11-50</option>
+                    <option value="51-200">51-200</option>
+                    <option value="201-500">201-500</option>
+                    <option value="501-1000">501-1000</option>
+                    <option value="1001-5000">1001-5000</option>
+                    <option value="5001+">5001+</option>
+                </select>
+
+                <label for="company_revenue">Estimated Company Revenue</label>
+                <select name="company_revenue" id="company_revenue">
+                    <option value="">Select...</option>
+                    <option value="Less than $1M">Less than $1M</option>
+                    <option value="$1M - $5M">$1M - $5M</option>
+                    <option value="$5M - $10M">$5M - $10M</option>
+                    <option value="$10M - $50M">$10M - $50M</option>
+                    <option value="$50M - $100M">$50M - $100M</option>
+                    <option value="$100M - $500M">$100M - $500M</option>
+                    <option value="$500M+">$500M+</option>
+                </select>
+            </div>
+
+            <!-- Consumer Financial & Occupation Filters -->
+            <div class="section">
+                <h2>Consumer Financial & Occupation Filters</h2>
+                <label for="income_range">Income Range</label>
+                <select name="income_range" id="income_range">
+                    <option value="">Select...</option>
+                    <option value="Under $50k">Under $50k</option>
+                    <option value="$50k - $100k">$50k - $100k</option>
+                    <option value="$100k - $150k">$100k - $150k</option>
+                    <option value="$150k - $250k">$150k - $250k</option>
+                    <option value="$250k - $500k">$250k - $500k</option>
+                    <option value="$500k - $1M">$500k - $1M</option>
+                    <option value="$1M+">$1M+</option>
+                </select>
+
+                <label for="net_worth">Net Worth</label>
+                <select name="net_worth" id="net_worth">
+                    <option value="">Select...</option>
+                    <option value="Under $100k">Under $100k</option>
+                    <option value="$100k - $500k">$100k - $500k</option>
+                    <option value="$500k - $1M">$500k - $1M</option>
+                    <option value="$1M - $5M">$1M - $5M</option>
+                    <option value="$5M+">$5M+</option>
+                </select>
+
+                <label for="credit_rating">Credit Rating</label>
+                <select name="credit_rating" id="credit_rating">
+                    <option value="">Select...</option>
+                    <option value="Excellent (800+)">Excellent (800+)</option>
+                    <option value="Good (740-799)">Good (740-799)</option>
+                    <option value="Fair (670-739)">Fair (670-739)</option>
+                    <option value="Poor (580-669)">Poor (580-669)</option>
+                    <option value="Bad (<580)">Bad (&lt;580)</option>
+                </select>
+
+                <!-- Removed new credit range per user request -->
+
+                <label for="credit_card_user">Credit Card User</label>
+                <select name="credit_card_user" id="credit_card_user">
+                    <option value="">Select...</option>
+                    <option value="Yes">Yes</option>
+                    <option value="No">No</option>
+                </select>
+
+                <label for="investments">Investment Type</label>
+                <select name="investments" id="investments">
+                    <option value="">Select...</option>
+                    <option value="None">None</option>
+                    <option value="Stocks">Stocks</option>
+                    <option value="Bonds">Bonds</option>
+                    <option value="Real Estate">Real Estate</option>
+                    <option value="Retirement Accounts">Retirement Accounts</option>
+                    <option value="Crypto">Cryptocurrency</option>
+                    <option value="Other">Other</option>
+                </select>
+
+                <label for="mortgage_amount">Mortgage Amount</label>
+                <select name="mortgage_amount" id="mortgage_amount">
+                    <option value="">Select...</option>
+                    <option value="No Mortgage">No Mortgage</option>
+                    <option value="Under $100k">Under $100k</option>
+                    <option value="$100k - $250k">$100k - $250k</option>
+                    <option value="$250k - $500k">$250k - $500k</option>
+                    <option value="$500k - $750k">$500k - $750k</option>
+                    <option value="$750k - $1M">$750k - $1M</option>
+                    <option value="$1M+">$1M+</option>
+                </select>
+
+                <label for="occupation_group">Occupation Group</label>
+                <select name="occupation_group" id="occupation_group">
+                    <option value="">Select...</option>
+                    <option value="Healthcare">Healthcare</option>
+                    <option value="Sales">Sales</option>
+                    <option value="Information Technology">Information Technology</option>
+                    <option value="Management">Management</option>
+                    <option value="Education">Education</option>
+                    <option value="Finance">Finance</option>
+                    <option value="Manufacturing">Manufacturing</option>
+                    <option value="Retail">Retail</option>
+                    <option value="Construction">Construction</option>
+                    <option value="Other">Other</option>
+                </select>
+
+                <label for="occupation_type">Occupation Type</label>
+                <select name="occupation_type" id="occupation_type">
+                    <option value="">Select...</option>
+                    <option value="Executive / Owner">Executive / Owner</option>
+                    <option value="Professional">Professional</option>
+                    <option value="Technician">Technician</option>
+                    <option value="Clerical / Administrative">Clerical / Administrative</option>
+                    <option value="Laborer">Laborer</option>
+                    <option value="Unemployed">Unemployed</option>
+                    <option value="Student">Student</option>
+                    <option value="Retired">Retired</option>
+                    <option value="Other">Other</option>
+                </select>
+            </div>
+
+            <!-- Demographics -->
+            <div class="section">
+                <h2>Demographic Filters</h2>
+                <label for="gender">Gender</label>
+                <select name="gender" id="gender">
+                    <option value="">Select...</option>
+                    <option value="Any">Any</option>
+                    <option value="Male">Male</option>
+                    <option value="Female">Female</option>
+                    <option value="Non-binary">Non-binary</option>
+                    <option value="Prefer not to say">Prefer not to say</option>
+                </select>
+
+                <label for="ethnicity">Ethnicity</label>
+                <select name="ethnicity" id="ethnicity">
+                    <option value="">Select...</option>
+                    <option value="Any">Any</option>
+                    <option value="White">White</option>
+                    <option value="Black or African American">Black or African American</option>
+                    <option value="Hispanic or Latino">Hispanic or Latino</option>
+                    <option value="Asian">Asian</option>
+                    <option value="Native American">Native American</option>
+                    <option value="Pacific Islander">Pacific Islander</option>
+                    <option value="Other">Other</option>
+                </select>
+
+                <label for="language">Language</label>
+                <select name="language" id="language">
+                    <option value="">Select...</option>
+                    <option value="English">English</option>
+                    <option value="Spanish">Spanish</option>
+                    <option value="French">French</option>
+                    <option value="Chinese">Chinese</option>
+                    <option value="German">German</option>
+                    <option value="Other">Other</option>
+                </select>
+
+                <label for="education">Education Level</label>
+                <select name="education" id="education">
+                    <option value="">Select...</option>
+                    <option value="High School or less">High School or less</option>
+                    <option value="Some College">Some College</option>
+                    <option value="Associate Degree">Associate Degree</option>
+                    <option value="Bachelor's Degree">Bachelor's Degree</option>
+                    <option value="Master's Degree">Master's Degree</option>
+                    <option value="Professional Degree (JD, MD)">Professional Degree (JD, MD)</option>
+                    <option value="Doctorate">Doctorate</option>
+                </select>
+
+                <label for="smoker">Smoker</label>
+                <select name="smoker" id="smoker">
+                    <option value="">Select...</option>
+                    <option value="Yes">Yes</option>
+                    <option value="No">No</option>
+                </select>
+            </div>
+
+            <!-- Age Range -->
+            <div class="section">
+                <h2>Age Range</h2>
+                <label for="age_min">Minimum Age</label>
+                <input type="number" id="age_min" name="age_min" min="0" placeholder="e.g. 18">
+                <label for="age_max">Maximum Age</label>
+                <input type="number" id="age_max" name="age_max" min="0" placeholder="e.g. 65">
+            </div>
+
+            <!-- Family & Household Filters -->
+            <div class="section">
+                <h2>Family & Household Filters</h2>
+                <label for="marital_status">Marital Status</label>
+                <select name="marital_status" id="marital_status">
+                    <option value="">Select...</option>
+                    <option value="Single">Single</option>
+                    <option value="Married">Married</option>
+                    <option value="Separated">Separated</option>
+                    <option value="Divorced">Divorced</option>
+                    <option value="Widowed">Widowed</option>
+                </select>
+            </div>
+
+            <!-- Housing Filters -->
+            <div class="section">
+                <h2>Housing Filters</h2>
+                <label for="homeowner_status">Homeowner Status</label>
+                <select name="homeowner_status" id="homeowner_status">
+                    <option value="">Select...</option>
+                    <option value="Owner">Owner</option>
+                    <option value="Renter">Renter</option>
+                    <option value="Unknown">Unknown</option>
+                </select>
+
+                <label for="dwelling_type">Dwelling Type</label>
+                <select name="dwelling_type" id="dwelling_type">
+                    <option value="">Select...</option>
+                    <option value="Single Family Home">Single Family Home</option>
+                    <option value="Condo/Townhouse">Condo/Townhouse</option>
+                    <option value="Apartment">Apartment</option>
+                    <option value="Mobile Home">Mobile Home</option>
+                    <option value="Other">Other</option>
+                </select>
+
+                <label for="year_built">Year Built</label>
+                <input type="number" name="year_built" id="year_built" placeholder="e.g. 1995">
+
+                <label for="purchase_price">Purchase Price</label>
+                <select name="purchase_price" id="purchase_price">
+                    <option value="">Select...</option>
+                    <option value="Under $100k">Under $100k</option>
+                    <option value="$100k - $250k">$100k - $250k</option>
+                    <option value="$250k - $500k">$250k - $500k</option>
+                    <option value="$500k - $750k">$500k - $750k</option>
+                    <option value="$750k - $1M">$750k - $1M</option>
+                    <option value="$1M+">$1M+</option>
+                </select>
+
+                <label for="purchase_year">Purchase Year</label>
+                <select name="purchase_year" id="purchase_year">
+                    <option value="">Select...</option>
+                    <option value="Before 1990">Before 1990</option>
+                    <option value="1990-1999">1990-1999</option>
+                    <option value="2000-2009">2000-2009</option>
+                    <option value="2010-2019">2010-2019</option>
+                    <option value="2020-2025">2020-2025</option>
+                    <option value="After 2025">After 2025</option>
+                </select>
+
+                <label for="home_value">Estimated Home Value</label>
+                <select name="home_value" id="home_value">
+                    <option value="">Select...</option>
+                    <option value="Under $100k">Under $100k</option>
+                    <option value="$100k - $250k">$100k - $250k</option>
+                    <option value="$250k - $500k">$250k - $500k</option>
+                    <option value="$500k - $750k">$500k - $750k</option>
+                    <option value="$750k - $1M">$750k - $1M</option>
+                    <option value="$1M+">$1M+</option>
+                </select>
+            </div>
+
+            <!-- Location Filters -->
+            <div class="section">
+                <h2>Location Filters</h2>
+                <label for="cities">Cities</label>
+                <textarea name="cities" id="cities" rows="2" placeholder="Enter city names separated by commas (e.g. Atlanta, New York)"></textarea>
+
+                <label for="states">State</label>
+                <select name="state" id="states">
+                    <option value="All States">All States</option>
+                    <option value="AL">Alabama</option>
+                    <option value="AK">Alaska</option>
+                    <option value="AZ">Arizona</option>
+                    <option value="AR">Arkansas</option>
+                    <option value="CA">California</option>
+                    <option value="CO">Colorado</option>
+                    <option value="CT">Connecticut</option>
+                    <option value="DE">Delaware</option>
+                    <option value="FL">Florida</option>
+                    <option value="GA">Georgia</option>
+                    <option value="HI">Hawaii</option>
+                    <option value="ID">Idaho</option>
+                    <option value="IL">Illinois</option>
+                    <option value="IN">Indiana</option>
+                    <option value="IA">Iowa</option>
+                    <option value="KS">Kansas</option>
+                    <option value="KY">Kentucky</option>
+                    <option value="LA">Louisiana</option>
+                    <option value="ME">Maine</option>
+                    <option value="MD">Maryland</option>
+                    <option value="MA">Massachusetts</option>
+                    <option value="MI">Michigan</option>
+                    <option value="MN">Minnesota</option>
+                    <option value="MS">Mississippi</option>
+                    <option value="MO">Missouri</option>
+                    <option value="MT">Montana</option>
+                    <option value="NE">Nebraska</option>
+                    <option value="NV">Nevada</option>
+                    <option value="NH">New Hampshire</option>
+                    <option value="NJ">New Jersey</option>
+                    <option value="NM">New Mexico</option>
+                    <option value="NY">New York</option>
+                    <option value="NC">North Carolina</option>
+                    <option value="ND">North Dakota</option>
+                    <option value="OH">Ohio</option>
+                    <option value="OK">Oklahoma</option>
+                    <option value="OR">Oregon</option>
+                    <option value="PA">Pennsylvania</option>
+                    <option value="RI">Rhode Island</option>
+                    <option value="SC">South Carolina</option>
+                    <option value="SD">South Dakota</option>
+                    <option value="TN">Tennessee</option>
+                    <option value="TX">Texas</option>
+                    <option value="UT">Utah</option>
+                    <option value="VT">Vermont</option>
+                    <option value="VA">Virginia</option>
+                    <option value="WA">Washington</option>
+                    <option value="WV">West Virginia</option>
+                    <option value="WI">Wisconsin</option>
+                    <option value="WY">Wyoming</option>
+                </select>
+                <small>Select a specific state or choose “All States” for the entire U.S.</small>
+
+                <label for="zip_codes">Zip Codes</label>
+                <textarea name="zip_codes" id="zip_codes" rows="2" placeholder="Enter zip codes separated by commas"></textarea>
+            </div>
+
+            <button type="submit">Submit Request</button>
+        </form>
+    </div>
+</body>
+</html>
