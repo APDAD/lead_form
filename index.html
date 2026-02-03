@@ -24,10 +24,9 @@
             margin: 30px auto 10px auto;
             text-align: center;
         }
-        .video-wrapper iframe {
+        .video-wrapper video {
             width: 100%;
             max-width: 560px;
-            height: 315px;
         }
         h1 {
             text-align: center;
@@ -88,9 +87,12 @@
 <body>
     <div class="container">
 
-        <!-- YouTube Video Embed -->
+        <!-- Video Embed - Google Drive hosted, clean native player -->
         <div class="video-wrapper">
-            <iframe width="560" height="315" src="https://www.youtube.com/embed/o-iSdU14FXM" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+            <video controls playsinline style="width:100%; border-radius:8px; background:#000;">
+                <source src="https://drive.google.com/uc?export=download&id=1LTovMzfp9ODReVrDAY9VMQnJjfHxy4IX" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
         </div>
 
         <!-- Form Heading -->
